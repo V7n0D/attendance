@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mark Attendance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 80px;
+            background-color: #f7f7f7;
+        }
+        h1 {
+            margin-bottom: 40px;
+            color: #333;
+        }
+        .btn {
+            padding: 14px 32px;
+            margin: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .clock-in {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .clock-in:hover {
+            background-color: #45a049;
+        }
+        .clock-out {
+            background-color: #f44336;
+            color: white;
+        }
+        .clock-out:hover {
+            background-color: #da190b;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mark Your Attendance</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" name="action" value="clock_in" class="btn clock-in">Clock In</button>
+        <button type="submit" name="action" value="clock_out" class="btn clock-out">Clock Out</button>
+    </form>
+</body>
+</html>
